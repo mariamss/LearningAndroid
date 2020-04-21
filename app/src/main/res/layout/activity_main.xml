@@ -8,15 +8,11 @@
     android:gravity="center"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
-
     <Button
         android:id="@+id/btn_start_app"
-        android:text="LAUNCH APP"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:onClick="launchApp"
+        android:text="LAUNCH APP" />
 
 </LinearLayout>

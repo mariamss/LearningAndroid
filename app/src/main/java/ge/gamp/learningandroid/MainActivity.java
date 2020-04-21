@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
+    public void launchApp (View view){
+        startListActivity();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

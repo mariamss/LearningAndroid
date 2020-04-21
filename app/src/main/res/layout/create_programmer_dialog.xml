@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="15dp"
+    >
 
     <EditText
         android:id="@+id/input_name"
@@ -26,6 +28,56 @@
         android:layout_marginBottom="16dp"
         android:fontFamily="sans-serif"
         android:hint="Occupation"/>
+
+    <EditText
+        android:id="@+id/input_age"
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif"
+        android:hint="Age"/>
+
+    <EditText
+        android:id="@+id/input_salary"
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif"
+        android:hint="Salary"/>
+
+    <EditText
+        android:id="@+id/input_bio"
+        android:inputType="textMultiLine"
+        android:lines="8"
+        android:minLines="4"
+        android:maxLines="10"
+        android:gravity="top|left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif"
+        android:hint="Bio"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/error_message"
+        android:textSize="16dp"
+        android:textColor="#FF0000"
+        />
+
+
+
 
     <!--  When creating a new EditText make sure it's inputType is correct. E.G age - should have numeric only input  -->
 </LinearLayout>

@@ -2,6 +2,7 @@ package ge.gamp.learningandroid.data.repository;
 
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,14 +15,14 @@ import ge.gamp.learningandroid.data.model.Programmer;
 class FakeRestRepository implements Repository{
     private final List<Programmer> programmers = new ArrayList<>();
     public FakeRestRepository(){
-        programmers.add(new Programmer(1, "Gurama", "java", 23, 1200, ));
-        programmers.add(new Programmer(2, "Tengiza", "java", 21, 1500));
-        programmers.add(new Programmer(3, "Didgora", "java", 25, 1121));
-        programmers.add(new Programmer(4, "Guaranduxt", "java", 27, 931));
-        programmers.add(new Programmer(5, "Mzevinari", "java", 29, 800));
-        programmers.add(new Programmer(6, "ბუხუტი", "java", 21, 700));
-        programmers.add(new Programmer(7, "Mariami", "java", 18, 150));
-        programmers.add(new Programmer(8, "Mendoza", "java", 17, 11500));
+        programmers.add(new Programmer(1, "Gurama", "java", 23, 1200, "bio", "https://upload.wikimedia.org/wikipedia/en/a/aa/Bart_Simpson_200px.png"));
+        programmers.add(new Programmer(2, "Tengiza", "java", 21, 1500, "bio", "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS0xzH6x260xclX7ayT1E6JfjymTPSVmMDXxPT395_r6Q5sFGyh&usqp=CAU"));
+        programmers.add(new Programmer(3, "Didgora", "java", 25, 1121, "bio", "https://vignette.wikia.nocookie.net/simpsons/images/0/02/Homer_Simpson_2006.png/revision/latest/top-crop/width/360/height/360?cb=20190409004803"));
+        programmers.add(new Programmer(4, "Guaranduxt", "java", 27, 931, "bio", "https://vignette.wikia.nocookie.net/simpsons/images/0/02/Homer_Simpson_2006.png/revision/latest/top-crop/width/360/height/360?cb=20190409004803"));
+        programmers.add(new Programmer(5, "Mzevinari", "java", 29, 800, "bio", "https://vignette.wikia.nocookie.net/simpsons/images/0/02/Homer_Simpson_2006.png/revision/latest/top-crop/width/360/height/360?cb=20190409004803"));
+        programmers.add(new Programmer(6, "ბუხუტი", "java", 21, 700, "bio", "https://vignette.wikia.nocookie.net/simpsons/images/0/02/Homer_Simpson_2006.png/revision/latest/top-crop/width/360/height/360?cb=20190409004803"));
+        programmers.add(new Programmer(7, "Mariami", "java", 18, 150, "bio", "https://vignette.wikia.nocookie.net/simpsons/images/0/02/Homer_Simpson_2006.png/revision/latest/top-crop/width/360/height/360?cb=20190409004803"));
+        programmers.add(new Programmer(8, "Mendoza", "java", 17, 11500,"bio", "https://vignette.wikia.nocookie.net/simpsons/images/0/02/Homer_Simpson_2006.png/revision/latest/top-crop/width/360/height/360?cb=20190409004803"));
     }
 
     @Override

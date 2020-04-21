@@ -1,7 +1,7 @@
 package ge.gamp.learningandroid.data.repository;
+import android.util.Log;
 
 import java.util.List;
-
 import ge.gamp.learningandroid.data.ResponseHandler;
 import ge.gamp.learningandroid.data.model.Programmer;
 
@@ -26,10 +26,12 @@ public class CombinedRepository implements Repository{
 
     @Override
     public void getProgrammers(ResponseHandler<List<Programmer>> handler) {
-        // ToDO: Change this to work with both repositories
         inMemoryRepository.getProgrammers(inMemoryProgrammer -> {
-            if(inMemoryProgrammer == null){
-                restRepository.getProgrammers(handler);
+            if(inMemoryProgrammer.size()==0){
+                restRepository.getProgrammers(restProgrammers -> {
+                    setProgrammers(restProgrammers);
+                    handler.handleResponse(restProgrammers);
+                });
             }else{
                 handler.handleResponse(inMemoryProgrammer);
             }
@@ -40,7 +42,9 @@ public class CombinedRepository implements Repository{
     public void getProgrammer(int id, ResponseHandler<Programmer> handler) {
         inMemoryRepository.getProgrammer(id, response -> {
             if(response == null){
-                restRepository.getProgrammer(id, handler);
+                restRepository.getProgrammer(id, currentProgrammer->{
+                    handler.handleResponse(currentProgrammer);
+                });
             }else{
                 handler.handleResponse(response);
             }
@@ -49,17 +53,17 @@ public class CombinedRepository implements Repository{
 
     @Override
     public void deleteProgrammer(int id, ResponseHandler<Boolean> handler) {
-        // ToDO: Change this to work with both repositories
         restRepository.deleteProgrammer(id, (result) -> {
             inMemoryRepository.deleteProgrammer(id, handler);
+            handler.handleResponse(result);
         });
     }
 
     @Override
     public void createProgrammer(Programmer programmer, ResponseHandler<Boolean> handler) {
-        // ToDO: Change this to work with both repositories
         restRepository.createProgrammer(programmer, result -> {
-            inMemoryRepository.addProgrammer(programmer);
+            addProgrammer(programmer);
+            handler.handleResponse(result);
         });
     }
 
